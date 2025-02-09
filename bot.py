@@ -73,7 +73,4 @@ def add_func(message):
         user.schedule_add(day, time, text)
         show_schedule(message)
 
-try:
-    bot.polling(none_stop=True)
-except RuntimeError as _ex:
-    pass
+bot.polling(none_stop=True)
