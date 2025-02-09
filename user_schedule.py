@@ -52,8 +52,3 @@ class User:
     def plans_add(self, text):
         self.plans_counter += 1
         self.plans[str(self.plans_counter)] = text
-
-
-if __name__ == '__main__':
-    user = User()
-    print(user.plans)
