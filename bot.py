@@ -1,7 +1,6 @@
-import webbrowser
-
 from user_schedule import User
 
+import webbrowser
 import telebot
 import time
 
@@ -41,32 +40,6 @@ f'''<b>Все команды бота:</b>
 /clears - очистить расписание
 /git - перейти в репозиторий бота github
 /secret - ???''', parse_mode='html')
-
-"""
-@bot.message_handler(commands = ['add'])
-def add_func(message):
-    bot.send_message(message.chat.id,
-f'''\
-<u>Если нужно сделать заметку</u>:
-    Напишите текст заметки.
-    Пример: "Текст заметки"
-<u>Если вы хотите поставить в расписание собиытие</u>:
-    Укажите день недели, время и текст через знаки "&&&".
-    Пример: "Понедельник&&&22:30&&&Подготовка ко сну"''', parse_mode='html')
-    @bot.message_handler()
-    def text(new_message):
-        if new_message.text == 'break':
-            return 0
-        elif '&&&' not in new_message.text:
-            user.plans_add(new_message.text)
-            show_plans(new_message)
-        else:
-            day, time, text = new_message.text.split('&&&')
-            user.schedule_add(day, time, text)
-            show_schedule(new_message)
-        bot.reply_to(message, '<em>Действует режим добавления.\nНапишите "break", чтобы остановить режим добавления</em>', parse_mode='html')
-
-"""
 
 @bot.message_handler(commands = ['clearp'])
 def showp_func(message):
