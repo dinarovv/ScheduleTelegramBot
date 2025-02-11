@@ -1,7 +1,6 @@
-import webbrowser
-
 from user_schedule import User
 
+import webbrowser
 import telebot
 import time
 
