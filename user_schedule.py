@@ -58,8 +58,12 @@ class User:
         msg = message.text.split('&')[1]
         if msg in self.plans:
             del self.plans[msg]
-        else:
-            pass
+            try:
+                self.plans_counter -= 1
+                items = sorted((int(k), v) for k, v in self.plans.items())
+                self.plans = {str(i + 1): item for i, (_, item) in enumerate(items)}
+            except ValueError as ex:
+                pass
 
     def schedule_remove_by_time(self,message):
         day, time = message.text.split('&&')[1], message.text.split('&&')[2]
