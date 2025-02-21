@@ -5,7 +5,7 @@ import telebot
 import time
 
 user = User()
-token = '7748783352:AAE7W_otxklZ2eAKIfxLhZnYdJwHqAoGy4g'
+token = 'Enter here your token.'
 bot = telebot.TeleBot(token)
 
 def show_all(message):
